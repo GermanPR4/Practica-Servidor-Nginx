@@ -8,6 +8,11 @@ Vagrant.configure("2") do |config|
     debian.vm.provision "shell", name: "update", inline: <<-SHELL
       sudo apt update
       sudo apt install -y nginx
+
+      sudo mkdir -p /var/www/webDimension/html
+      sudo cp -r /vagrant/webDimension/* /var/www/webDimension/html/
+      sudo chown -R www-data:www-data /var/www/webDimension/html
+      sudo chmod -R 755 /var/www/webDimension
     SHELL
   end
 end
