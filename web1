@@ -5,7 +5,7 @@ server {
     root /var/www/webGerman/html;
     index index.html;
 
-    server_name webgerman;
+    server_name webGerman;
 
     location / {
         try_files $uri $uri/ =404;
