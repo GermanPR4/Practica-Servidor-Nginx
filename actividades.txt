@@ -1,0 +1,5 @@
+¿Qué pasa si no hago el link simbólico entre sites-available y sites-enabled de mi sitio web?
+
+
+
+¿Qué pasa si no le doy los permisos adecuados a /var/www/nombre_web?
