@@ -44,6 +44,15 @@ Vagrant.configure("2") do |config|
       sudo cp /vagrant/web2 /etc/nginx/sites-available/web2
       sudo ln -s /etc/nginx/sites-available/web2 /etc/nginx/sites-enabled/
 
+      # Dar permisos de lectura/escritura a userftp en las carpetas web
+      sudo chown -R userftp:userftp /var/www/webGerman/html
+      sudo chown -R userftp:userftp /var/www/webGerman2/html
+      sudo chmod -R 755 /var/www/webGerman/html
+      sudo chmod -R 755 /var/www/webGerman2/html
+
+      # Reiniciar el servicio de vsftpd
+      sudo systemctl restart vsftpd
+
       sudo nginx -t
       sudo systemctl restart nginx
     SHELL
