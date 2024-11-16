@@ -1,5 +1,10 @@
 ¿Qué pasa si no hago el link simbólico entre sites-available y sites-enabled de mi sitio web?
 
+Si no hago el link simbólico es como tener la configuración lista pero sin decirle al servidor que la use por lo que el servidor no va a 
+cargar el sitio. (El sitio está pero sin estar activo pa que se entienda mejor)
 
 
 ¿Qué pasa si no le doy los permisos adecuados a /var/www/nombre_web?
+
+Si no le doy los permisos correctos al servidor lo que pasa es que no puede acceder a los archivos de mi sitio por lo seguramente no funcione
+el sitio. Sin permisos probablemente no se podrá leer ni mostrar la web.
