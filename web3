@@ -1,0 +1,21 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  root /var/www/webPerfect/html;
+  index index.html index.htm index.nginx-debian.html;
+  server_name webPerfect;
+
+  location / {
+    auth_basic "Área restringida";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    allow 192.168.56.1;
+    allow 192.168.57.1;
+    allow 192.168.1.21;
+    deny all;
+
+    try_files $uri $uri/ =404;
+  }
+
+}
