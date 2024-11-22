@@ -8,6 +8,13 @@ Vagrant.configure("2") do |config|
       sudo apt update
       sudo apt install -y nginx git vsftpd ufw openssl
 
+      #PRACTICA 3 (ACCESO SEGURO)
+      
+      sudo openssl req -x509 -nodes -days 365 \
+      -newkey rsa:2048 -keyout /etc/ssl/private/webPerfect.key \
+      -out /etc/ssl/certs/webPerfect.crt \
+      -subj "/C=ES/ST=Andalucia/L=Granada/O=IZV/OU=WEB/CN=webPerfect/emailAddress=webPerfect@webPerfect"
+
       #Configuración de Firewall
       sudo ufw allow 21/tcp
       sudo ufw allow 40000:50000/tcp
@@ -82,6 +89,12 @@ Vagrant.configure("2") do |config|
 
 
 
+
+
+      sudo ufw allow ssh
+      sudo ufw allow 'Nginx Full'
+      sudo ufw delete allow 'Nginx HTTP'
+      sudo ufw --force enable
 
 
 
